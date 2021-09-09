@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walk The Talk Fantasy League Scheduler</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="getContent()">
+    <script src="/js/script.js"></script>
+    <script src="/js/info.js"></script>
+    <div>
+      <button class="tablink" id="openhowto">How To</button>
+      <button class="tablink" id="openabout">About</button>
+    </div>
+    <div id="howtomodal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>How To</h3>
+          <span class="close">&times;</span>
+        </div>
+        <div class="howtomodal modal-body"><p></p></div>
+      </div>
+    </div>
+    
+    <div id="aboutmodal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>About</h3>
+          <span class="close">&times;</span>
+        </div>
+        <div class="about modal-body"><p></p></div>
+      </div>
+    </div>
+
+    <div id="header" class="clearfix"><h1>Walk The Talk</h1></div>
+
+    <main class="">
+    <div id="input-area" class="tabcontent row flex-container ds-card-grid ds-card-grid-border">
+      <div class="card">
+        <p id="division-1">Division 1</p>
+        <ul class="divison-1">
+          <li><input class="team1" type="text" placeholder="Team 1..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 2..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 3..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 4..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 5..."></input></li>
+        </ul>
+      </div>
+      <div class="card">
+        <p id="division-2">Division 2</p>
+        <ul class="divison-2">
+          <li><input class="team1" type="text" placeholder="Team 6..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 7..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 8..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 9..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 10..."></input></li>
+        </ul>
+      </div>
+      <div class="card">
+        <p id="division-3">Division 3</p>
+        <ul class="divison-3">
+          <li><input class="team1" type="text" placeholder="Team 11..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 12..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 13..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 14..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 15..."></input></li>
+        </ul>
+      </div>
+      <div class="card">
+        <p id="division-4">Division 4</p>
+        <ul class="divison-4">
+          <li><input class="team1" type="text" placeholder="Team 16..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 17..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 18..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 19..."></input></li>
+          <li><input class="team" type="text" placeholder="Team 20..."></input></li>
+        </ul>
+      </div>
+      <button type="button" style="color:green" onclick="main()">Get League Schedule</button>
+    </div>
+    </main>
+    <div id=output-area class=tabcontent>
+      <pre id='final-result'></pre>
+    </div>
+
+    <script>
+      let howToModal = document.getElementById('howtomodal')
+      let howToBtn = document.getElementById('openhowto')
+      let howToSpan = document.getElementsByClassName('close')[0]
+      
+      howToBtn.onclick = function(){
+        howToModal.style.display = "block"
+      }
+
+      howToSpan.onclick = function(){
+        howToModal.style.display = "none"
+      }
+
+      let aboutModal = document.getElementById('aboutmodal')
+      let aboutBtn = document.getElementById('openabout')
+      let aboutSpan = document.getElementsByClassName('close')[1]
+      
+      aboutBtn.onclick = function(){
+        aboutModal.style.display = "block"
+      }
+
+      aboutSpan.onclick = function(){
+        aboutModal.style.display = "none"
+      }
+
+      window.onclick = function(event){
+        if(event.target==howToModal){
+          howToModal.style.display = "none"
+          console.log('here')
+        }
+        if(event.target == aboutModal){
+          aboutModal.style.display = "none"
+        }
+      } 
+
+    </script> 
+  </body>
+</html>
