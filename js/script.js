@@ -229,6 +229,7 @@ function main(){
       //if a duplicate is found and program unable to find new combo, clear current arrays and recalc
       if(dupTestCounter == 15){
         //console.log('failedAttempt ', failedAttempt++)
+        failedAttempt++
         i=-1
         weeklyMatchups = []
         eachMatchup = []
